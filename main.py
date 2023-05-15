@@ -1,5 +1,5 @@
 from RSA import RSA
-from utils import *
+from util import *
 def main():
     m = 20
     e = 47

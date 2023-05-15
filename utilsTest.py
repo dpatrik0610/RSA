@@ -1,5 +1,5 @@
 import unittest
-from utils import *
+from util import extended_euclidean, quick_pow
 
 class RSATests(unittest.TestCase):
     def test_extended_euclidean(self):

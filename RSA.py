@@ -1,5 +1,5 @@
 import math
-from utils import *
+from util import *
 
 class RSA():
     def __init__(self, m, e, p, q, d = 0):
