@@ -23,8 +23,9 @@ def exponents_of_two(number: int):
 def extended_euclidean(x: int, y: int):
     x0, x1 = 1, 0
     y0, y1 = 0, 1
-
+    step = 0
     while y:
+        step += 1
         quotient, remainder = divmod(x, y)
         x, y = y, remainder
 
@@ -34,7 +35,7 @@ def extended_euclidean(x: int, y: int):
         x0, x1 = x1, x_next
         y0, y1 = y1, y_next
 
-    if (x0 + y0) % 2 == 0:
+    if step % 2 == 0:
         return x0, -y0
     else:
         return -x0, y0
