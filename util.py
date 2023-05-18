@@ -1,6 +1,8 @@
 import math
+import random
 
 def quick_pow(base: int, exp: int, mod: int) -> int:
+    """ Fast Modular Exponentiation algorithm"""
     #print(f"{base}^{exp} mod {mod}:")
     exp_of_two = exponents_of_two(exp)
     #print(f"{exp} = " + " + ".join(["2^" + str(n) for n in exp_of_two]))
@@ -18,9 +20,15 @@ def quick_pow(base: int, exp: int, mod: int) -> int:
     return final_result
 
 def exponents_of_two(number: int):
+    """ Generates a list of exponents of 2 for a given number """
     return [i for i in range(number.bit_length()) if number & (1 << i)]
 
+def gcd(a, b):
+    """ Greatest Common Divisor"""
+    return math.gcd(a, b)
+
 def extended_euclidean(x: int, y: int):
+    """ Extended Euclidean Algorithm """
     x0, x1 = 1, 0
     y0, y1 = 0, 1
     step = 0
@@ -39,3 +47,19 @@ def extended_euclidean(x: int, y: int):
         return x0, -y0
     else:
         return -x0, y0
+
+
+def generate_primes():
+    """ Generates a list of primes from 100 to 1000"""
+    primes = []
+    for i in range(100, 2000):
+        for x in range(2, i):
+            if (i%x==0):
+                break
+        else:
+            primes.append(i)
+    return primes
+
+def get_random_prime(list_of_primes):
+    return random.choice(list_of_primes)
+ 
